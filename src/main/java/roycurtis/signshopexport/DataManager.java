@@ -107,15 +107,6 @@ class DataManager implements Runnable
         }
         catch (Exception ex)
         {
-            LOGGER.info("Skipping sign " + current + " as it failed to serialize. " +
-                "This is likely because it was changed mid-process");
-
-            LOGGER.fine("Details for sign " + current + ":");
-            LOGGER.fine(signRec == null
-                ? "Could not generate record from data source"
-                : signRec.toString() );
-
-            LOGGER.log(Level.FINE, "Exception for sign " + current, ex);
         }
 
         current++;
