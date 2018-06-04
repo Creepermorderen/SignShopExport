@@ -151,7 +151,6 @@ class DataManager implements Runnable
             gson.toJson(dataSet, jWriter);
             LOGGER.fine( "Json file exported to " + file.getAbsolutePath() );
         }
-        catch (IOException e)
         {
             throw new RuntimeException("Could not save json file", e);
         }
