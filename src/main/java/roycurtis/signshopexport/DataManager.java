@@ -159,7 +159,7 @@ class DataManager implements Runnable
                 jWriter.setIndent("  ");
 
             gson.toJson(dataSet, jWriter);
-            System.out.print( "Json file exported to " + file.getAbsolutePath() );
+            LOGGER.fine( "Json file exported to " + file.getAbsolutePath() )
         }
         catch (Exception e)
         {
