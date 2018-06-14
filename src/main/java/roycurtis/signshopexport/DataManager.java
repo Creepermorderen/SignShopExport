@@ -149,20 +149,20 @@ class DataManager implements Runnable
 
     private void doSaveFile(File file, boolean minified)
     {
-        try (
-            FileWriter fWriter = new FileWriter(file);
-            JsonWriter jWriter = new JsonWriter(fWriter)
-        )
+        try
+
         {
+            FileWriter fWriter = new FileWriter(file);
+            JsonWriter jWriter = new JsonWriter(fWriter);
             if (!minified)
                 jWriter.setIndent("  ");
 
             gson.toJson(dataSet, jWriter);
-            LOGGER.fine( "Json file exported to " + file.getAbsolutePath() );
+            System.out.print( "Json file exported to " + file.getAbsolutePath() );
         }
-        catch (IOException e)
+        catch (Exception e)
         {
-            throw new RuntimeException("Could not save json file", e);
+            e.printStackTrace();
         }
     }
 }
